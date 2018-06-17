@@ -39,12 +39,7 @@ def baseManipulate(fileContentBase):
                 listAux.append(i)
                 index[content[j]] = listAux
         listWordsFile.append(content)
-
     return listWordsFile
-
-def scrollList():
-    for i in range(0, len(listWordsFile)):
-        makePesos(listWordsFile[i], i)
 
 def numberInFiles(word, numArquivo):
     contOcorrencia = 0
@@ -54,23 +49,30 @@ def numberInFiles(word, numArquivo):
             contOcorrencia+=1
     return contOcorrencia, numFilesAppear
 
-def makePesos(listWords, numArquivo):
-    for i in range(0,len(listWords)):
-        if listWords[i] not in stopwords:
-            frequency, numberOfDocuments = numberInFiles(listWords[i], numArquivo)
-            TF = frequency
-            IDF = len(fileContent) / numberOfDocuments
-            print(listWords[i], 'File: ', numArquivo, 'tamanho: ', len(listWordsFileOrigin[numArquivo]))
-            if TF > 0:
-                calculatedTF_IDF = (1 + (math.log10(TF)))*(math.log10(IDF))
-            else:
-                calculatedTF_IDF = 0
-        print(i,calculatedTF_IDF)
-        print('----------------------------------')
 
-
-
+def makePesos():
+    listDict = []
+    pesos = open('pesos.txt', 'w')
+    for i in range(0, len(listWordsFileOrigin)):
+        dict = {}
+        pesos.write(str(fileContent[i].replace('\n', '')) + ': ')
+        for j in range(0,len(listWordsFileOrigin[i])):
+            if listWordsFileOrigin[i][j] not in stopwords:
+                word = stemmer.stem(listWordsFileOrigin[i][j])
+                frequency, numberOfDocuments = numberInFiles(word, i)
+                TF = frequency
+                IDF = len(fileContent) / numberOfDocuments
+                if TF > 0:
+                    calculatedTF_IDF = (1 + (math.log10(TF))) * (math.log10(IDF))
+                else:
+                    calculatedTF_IDF = 0
+                if calculatedTF_IDF != 0:
+                    dict[j+1] = calculatedTF_IDF
+                    pesos.write(str(j+1) + ','  + str(calculatedTF_IDF) + ' ')
+        pesos.write("\n")
+        listDict.append(dict)
+    return listDict
 
 baseManipulate(fileContent)
-#print(index)
-scrollList()
+print(makePesos())
+
