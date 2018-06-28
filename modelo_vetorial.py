@@ -5,10 +5,15 @@ stopwords = nltk.corpus.stopwords.words("portuguese")
 stemmer = nltk.stem.RSLPStemmer()
 index = {}
 listWordsFile = []
+listDictPesos = []
 
 base = open("base.txt", "r")                                                            #Abre arquivo
 fileContent = base.readlines()                                                          #Recebe o conteúdo de cada arquivo
 base.close()
+
+arqQuery = open("consulta.txt", "r")
+query = arqQuery.readlines()
+arqQuery.close()
 
 def brokenText(fileContent):
     fileWords = (nltk.word_tokenize(fileContent))                                       #Quebra um texto em palavras
@@ -29,7 +34,7 @@ def baseManipulate(fileContentBase):
 
         for j in range(0, len(content)):
             content[j] = stemmer.stem(content[j])                                       #Substitui palavra pelo radical
-            if index.get(content[j]) == None:                                           #Cria dicionario com arquivos que a palavra aparece
+            if index.get(content[j]) == None:                                           #Cria um dicionario, onde a chave é cada palavra da base e o valor os documentos em que aparecem
                 index[content[j]] = [i]
             else:
                 listAux = index.get(content[j])
@@ -37,44 +42,72 @@ def baseManipulate(fileContentBase):
                 index[content[j]] = listAux
         listWordsFile.append(content)
 
-
-
 def makeTerms():                                                                        #Cria indice invetido
     terms = sorted(list(index.keys()))                                                  #onde seu número será sempre sua posição +1
     return terms
 
-def numberInFiles(word, numArquivo):                                                    #Função determina quantas ocorrencias uma palavra aparece em um arquivo
-    contOcorrencia = 0                                                                  #e em quantos arquivos aparece
+def calculatedIDF(word):
     numFilesAppear = len(set(index.get(word)))
+    IDF = (math.log10(len(fileContent) / numFilesAppear))
+    return IDF
+
+def calculatedTF(word, numArquivo):                                                    #Função determina quantas ocorrencias uma palavra aparece em um arquivo
+    TF = 0                                                                  #e em quantos arquivos aparece
     for i in index.get(word):
         if (i == numArquivo):
-            contOcorrencia += 1
-    return contOcorrencia, numFilesAppear
+            TF += 1
+    return TF
 
-def makePesos():
-    listDict = []
-    listTerms = makeTerms()
+def makePesos(listTerms):
     pesos = open('pesos.txt', 'w')
-    for i in range(0, len(listWordsFile)):                                              #Percorre para cada documento da base
+    for i in range(0, len(listWordsFile)):                                              #Percorre para cada documento da base para determinar os pesos de suas palavras
         dict = {}
         pesos.write(str(fileContent[i].replace('\n', '')) + ': ')
         for word in listTerms:                                                          #Percorre o indice invertido
             if word in listWordsFile[i]:                                                #Verifica se a palavra atual, pertence ao documento atual
-                frequency, numberOfDocuments = numberInFiles(word, i)                   #Chama função para cálculo do TF e IDF
-                TF = frequency
-                IDF = len(fileContent) / numberOfDocuments
+                TF = calculatedTF(word, i)                                              #Chama função para obter TF
+                IDF = calculatedIDF(word)                                               #Chama função para obter IDF
                 if TF > 0:                                                              #Se TF > 0, faz cálculo do TF-IDF
-                    calculatedTF_IDF = (1 + (math.log10(TF))) * (math.log10(IDF))
+                    calculatedTF_IDF = (1 + (math.log10(TF))) * IDF
                 else:                                                                   #Caso contrário, atribui 0
                     calculatedTF_IDF = 0
                 number = listTerms.index(word) + 1                                      #Pega a posição da palavra no índice
                 if calculatedTF_IDF != 0:                                               #Se não for 0, escreve no documento
                     pesos.write(str(number) + ',' + str(calculatedTF_IDF) + ' ')
                 dict[number] = calculatedTF_IDF
-        listDict.append(dict)                                                           #Cria uma lista de dicionários, onde cada dicionário representa os pesos de suas respectivas palavras
+        listDictPesos.append(dict)                                                           #Cria uma lista de dicionários, onde cada dicionário representa os pesos de suas respectivas palavras
         pesos.write("\n")
-    return listDict
+    return listDictPesos
 
+def queryManipulate(query, listTerms):
+    query = query.replace('\n','')
+    query = query.split('|')                                                            #Quebra consulta no OU, para criar subconsultas
+    treated_query = []
+    for i in query:
+        treated_query.append(i.replace(' ', '').split('&'))
+
+    #for i in range(0,1):
+        for subconsulta in treated_query:
+            print(subconsulta)
+            num = 0
+            den = 0
+            for word in subconsulta:
+                if word not in stopwords:
+                    word = stemmer.stem(word)
+                    idf_word = calculatedIDF(word)
+                    tfidf_query = (1 + (math.log10(1))) * idf_word
+                    number = listTerms.index(word) + 1
+                    tfidf_word = listDictPesos[0].get(number)
+                    # print('word: ',word)
+                    # print('tfidf_query: ',tfidf_query)
+                    # print('tfidf_word: ',tfidf_word)
+                    if tfidf_word != None:
+                        num += tfidf_word * tfidf_query
+        print('Numerador: ',num)
+        #print('Arquivo: ', i, '-----------------------------------------------')
 
 baseManipulate(fileContent)
-print(makePesos())
+listTerms = makeTerms()
+makePesos(listTerms)
+#print(listDictPesos)
+queryManipulate(query[0], listTerms)

@@ -1,7 +1,12 @@
-dict = {'teste' : [1,2,3]}
+def uniao(lst):
+    lstaux = []
+    for i in lst:                                                                       #Faz a uniao entre duas listas
+        for j in i:
+            if j not in lstaux:
+                lstaux.append(j)
+
+    return lstaux
 
 
-
-dict.get('teste').append(5)
-
-print(dict)
+lista = [[1,2],[2,3]]
+print(uniao(lista))
