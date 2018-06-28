@@ -52,7 +52,7 @@ def calculatedIDF(word):
     return IDF
 
 def calculatedTF(word, numArquivo):                                                    #Função determina quantas ocorrencias uma palavra aparece em um arquivo
-    TF = 0                                                                  #e em quantos arquivos aparece
+    TF = 0                                                                             #e em quantos arquivos aparece
     for i in index.get(word):
         if (i == numArquivo):
             TF += 1
@@ -86,28 +86,33 @@ def queryManipulate(query, listTerms):
     for i in query:
         treated_query.append(i.replace(' ', '').split('&'))
 
-    #for i in range(0,1):
+    for i in range(1):
+        listSimiliaridade = []
         for subconsulta in treated_query:
             print(subconsulta)
             num = 0
-            den = 0
+            resultado = 0
+            vetWord = 0
+            vetQuery = 0
             for word in subconsulta:
                 if word not in stopwords:
                     word = stemmer.stem(word)
                     idf_word = calculatedIDF(word)
                     tfidf_query = (1 + (math.log10(1))) * idf_word
                     number = listTerms.index(word) + 1
-                    tfidf_word = listDictPesos[0].get(number)
-                    # print('word: ',word)
-                    # print('tfidf_query: ',tfidf_query)
-                    # print('tfidf_word: ',tfidf_word)
+                    tfidf_word = listDictPesos[2].get(number)
                     if tfidf_word != None:
                         num += tfidf_word * tfidf_query
-        print('Numerador: ',num)
-        #print('Arquivo: ', i, '-----------------------------------------------')
-
+                        vetWord += tfidf_word * tfidf_word
+                        vetQuery += tfidf_query * tfidf_query
+            if num > 0:
+                resultado = num / (math.sqrt(vetWord) * math.sqrt(vetQuery))
+            else:
+                resultado = 0
+            listSimiliaridade.append(resultado)
+    print(listSimiliaridade)
 baseManipulate(fileContent)
 listTerms = makeTerms()
-makePesos(listTerms)
+print(makePesos(listTerms)[2])
 #print(listDictPesos)
 queryManipulate(query[0], listTerms)
