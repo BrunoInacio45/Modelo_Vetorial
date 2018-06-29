@@ -22,7 +22,7 @@ def brokenText(fileContent):
 def baseManipulate(fileContentBase):
     characters = ['','!',',','?','\n','.']
     for i in range(0, len(fileContent)):
-        nameFile = 'Bases/' + fileContentBase[i].replace('\n', '')
+        nameFile = fileContentBase[i].replace('\n', '')
         base = open(nameFile, "r")                                                      #Abre arquivo
         content = base.read()                                                           #Recebe o conteúdo de cada arquivo
         base.close()
@@ -85,13 +85,12 @@ def queryManipulate(query, listTerms):
     treated_query = []
     for i in query:
         treated_query.append(i.replace(' ', '').split('&'))
-
-    for i in range(1):
+    lista = []
+    for i in range(1):#len(fileContent)):
         listSimiliaridade = []
         for subconsulta in treated_query:
             print(subconsulta)
             num = 0
-            resultado = 0
             vetWord = 0
             vetQuery = 0
             for word in subconsulta:
@@ -110,9 +109,11 @@ def queryManipulate(query, listTerms):
             else:
                 resultado = 0
             listSimiliaridade.append(resultado)
-    print(listSimiliaridade)
+        lista.append(listSimiliaridade)
+    print(lista)
+
 baseManipulate(fileContent)
 listTerms = makeTerms()
-print(makePesos(listTerms)[2])
+print(makePesos(listTerms))
 #print(listDictPesos)
 queryManipulate(query[0], listTerms)
