@@ -9,8 +9,8 @@ index = {}
 listWordsFile = []
 listDictPesos = []
 
-nomeArqBase = sys.argv[1]#'base.txt'
-nomeArqConsulta = sys.argv[2]#'consulta.txt'
+nomeArqBase = sys.argv[1]#'base.txt'#
+nomeArqConsulta = sys.argv[2]#'consulta.txt'#
 
 
 base = open(nomeArqBase, "r")                                                            #Abre arquivo
@@ -87,7 +87,7 @@ def makePesos(listTerms):
                 if calculatedTF_IDF != 0:                                               #Se não for 0, escreve no documento
                     pesos.write(str(number) + ',' + str(calculatedTF_IDF) + ' ')
                 dict[number] = calculatedTF_IDF
-        listDictPesos.append(dict)                                                           #Cria uma lista de dicionários, onde cada dicionário representa os pesos de suas respectivas palavras
+        listDictPesos.append(dict)                                                      #Cria uma lista de dicionários, onde cada dicionário representa os pesos de suas respectivas palavras
         pesos.write("\n")
     return listDictPesos
 
@@ -114,11 +114,12 @@ def queryManipulate(query, listTerms):
     for i in query:
         treated_query.append(i.replace(' ', '').split('&'))
 
-    answer = []
+    dictSimilarity = {}
     numDocuments = 0
     for i in range(len(fileContent)):                                                   #Laço para definir similaridade de cada documento
         vetDocument = list(listDictPesos[i].values())                                   #Cria vetor de pesos do documento
         listSimilarity = []
+
         for subconsulta in treated_query:
             vetQuery = [0] * len(listDictPesos[i])
             for word in subconsulta:
@@ -129,22 +130,28 @@ def queryManipulate(query, listTerms):
                     p = collections.OrderedDict(listDictPesos[i])
                     position = list(p.keys()).index(number)
                     vetQuery[position] = ((1 + (math.log10(1))) * idf_word)             #Cria o vetor de pesos da consulta
-                    listSimilarity.append(calculatedSimilarity(vetDocument,vetQuery))   #Chama a função de calcula a similaridade passandos os dois vetores
+            listSimilarity.append(calculatedSimilarity(vetDocument,vetQuery))           #Chama a função de calcula a similaridade passandos os dois vetores
+
         maxSimilarity = max(listSimilarity)                                             #Pega o maior valor entre as subconsultas
-        answer.append(maxSimilarity)
         if maxSimilarity >= 0.001:                                                      #Verifica se o valor é maior que 0.001
             numDocuments += 1
-    makeResposta(answer,numDocuments)                                                   #Chama função para gravar no arquivo
+            dictSimilarity[i] = maxSimilarity                                           #Cria um dicionario, onde a chave é o doc e o valor é a similaridade
+    makeResposta(dictSimilarity, numDocuments)                                          #Chama função para gravar no arquivo
 
 #Função criada para escrever o arquivo 'resposta.txt'
-def makeResposta(answer,numDocuments):
+def makeResposta(dictSimilarity,numDocuments):
+    print(dictSimilarity)
     resposta = open('resposta.txt', 'w')
     print("Numero de documentos que atendem a consulta: ", numDocuments, '\nDocumentos:')
     resposta.write(str(numDocuments) + '\n')
-    for i in range(len(answer)):
-        if answer[i] >= 0.001:
-            resposta.write(fileContent[i].replace('\n','') + ' ' + str(answer[i]) + '\n')
-            print(fileContent[i].replace('\n',''))
+    while(len(dictSimilarity) > 0):
+        greaterValue = max(dictSimilarity, key=dictSimilarity.get)                      #Pega chava de maior valor do dicionario
+        resposta.write(fileContent[greaterValue].replace('\n', '')                      #Grava ela no arquivo
+                       + ' ' + str(dictSimilarity.get(greaterValue))
+                       + '\n')
+        print(fileContent[greaterValue].replace('\n', '')
+              + ' ' + str(dictSimilarity.get(greaterValue)))
+        del dictSimilarity[greaterValue]                                                #Remove a maior chave
 
 #Função principal
 def main():
