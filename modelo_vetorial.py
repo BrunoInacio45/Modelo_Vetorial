@@ -140,7 +140,6 @@ def queryManipulate(query, listTerms):
 
 #Função criada para escrever o arquivo 'resposta.txt'
 def makeResposta(dictSimilarity,numDocuments):
-    print(dictSimilarity)
     resposta = open('resposta.txt', 'w')
     print("Numero de documentos que atendem a consulta: ", numDocuments, '\nDocumentos:')
     resposta.write(str(numDocuments) + '\n')

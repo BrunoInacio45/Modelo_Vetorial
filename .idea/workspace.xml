@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a23515b5-7aec-4953-96f5-6f59c135a6ef" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/a.toy" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/b.toy" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/c.toy" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/d.toy" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/a.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/b.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/base.txt" afterPath="$PROJECT_DIR$/base.txt" />
-      <change beforePath="$PROJECT_DIR$/c.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/consulta.txt" afterPath="$PROJECT_DIR$/consulta.txt" />
       <change beforePath="$PROJECT_DIR$/modelo_vetorial.py" afterPath="$PROJECT_DIR$/modelo_vetorial.py" />
-      <change beforePath="$PROJECT_DIR$/pesos.txt" afterPath="$PROJECT_DIR$/pesos.txt" />
-      <change beforePath="$PROJECT_DIR$/resposta.txt" afterPath="$PROJECT_DIR$/resposta.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +17,8 @@
       <file leaf-file-name="modelo_vetorial.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modelo_vetorial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+            <state relative-caret-position="253">
+              <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#721#854#0" expanded="false" />
@@ -39,8 +28,6 @@
                 <element signature="e#3079#3286#0" expanded="false" />
                 <element signature="e#3369#4966#0" expanded="false" />
                 <element signature="e#5098#6073#0" expanded="false" />
-                <element signature="e#6180#8410#0" expanded="false" />
-                <element signature="e#8517#9318#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -239,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1530562907786</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit">
+      <created>1530574914604</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1530574914604</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Last Commit">
+      <created>1530575338620</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1530575338620</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -271,7 +272,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Last Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -293,8 +295,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -320,8 +320,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -347,8 +345,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -374,8 +370,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -401,8 +395,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -428,8 +420,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -455,8 +445,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -482,8 +470,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -509,8 +495,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,8 +520,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -563,8 +545,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -590,8 +570,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -617,8 +595,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,8 +620,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -671,8 +645,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -690,8 +662,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,8 +679,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,8 +704,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -755,35 +721,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teste.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modelo_vetorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#721#854#0" expanded="false" />
-            <element signature="e#941#2316#0" expanded="false" />
-            <element signature="e#2476#2620#0" expanded="false" />
-            <element signature="e#2698#2813#0" expanded="false" />
-            <element signature="e#3079#3286#0" expanded="false" />
-            <element signature="e#3369#4966#0" expanded="false" />
-            <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -809,8 +746,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -836,8 +771,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -863,8 +796,31 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teste.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modelo_vetorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#721#854#0" expanded="false" />
+            <element signature="e#941#2316#0" expanded="false" />
+            <element signature="e#2476#2620#0" expanded="false" />
+            <element signature="e#2698#2813#0" expanded="false" />
+            <element signature="e#3079#3286#0" expanded="false" />
+            <element signature="e#3369#4966#0" expanded="false" />
+            <element signature="e#5098#6073#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -882,8 +838,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,8 +855,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modelo_vetorial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        <state relative-caret-position="253">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#721#854#0" expanded="false" />
@@ -928,8 +880,6 @@
             <element signature="e#3079#3286#0" expanded="false" />
             <element signature="e#3369#4966#0" expanded="false" />
             <element signature="e#5098#6073#0" expanded="false" />
-            <element signature="e#6180#8410#0" expanded="false" />
-            <element signature="e#8517#9318#0" expanded="false" />
           </folding>
         </state>
       </provider>
