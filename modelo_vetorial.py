@@ -124,13 +124,13 @@ def queryManipulate(query, listTerms):
             vetQuery = [0] * len(listDictPesos[i])
             for word in subconsulta:
                 if word not in stopwords:                                               #Verifica se a palavra está na lista de stopwords
-                    word = stemmer.stem(word)                                           #Calcula o IDF da palavra da consulta
-                    idf_word = calculatedIDF(word)                                      #Busca o número dela no índice
-                    number = listTerms.index(word) + 1
+                    word = stemmer.stem(word)                                           #Tira o radical
+                    idf_word = calculatedIDF(word)                                      #Calcula o IDF da palavra da consulta
+                    number = listTerms.index(word) + 1                                  #Busca o número dela no índice
                     p = collections.OrderedDict(listDictPesos[i])
                     position = list(p.keys()).index(number)
                     vetQuery[position] = ((1 + (math.log10(1))) * idf_word)             #Cria o vetor de pesos da consulta
-            listSimilarity.append(calculatedSimilarity(vetDocument,vetQuery))           #Chama a função de calcula a similaridade passandos os dois vetores
+            listSimilarity.append(calculatedSimilarity(vetDocument,vetQuery))           #Chama a função de calcula a similaridade passando os dois vetores
 
         maxSimilarity = max(listSimilarity)                                             #Pega o maior valor entre as subconsultas
         if maxSimilarity >= 0.001:                                                      #Verifica se o valor é maior que 0.001
