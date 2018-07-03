@@ -29,7 +29,7 @@ def brokenText(fileContent):
 
 #Função para manipular a base de documentos
 def baseManipulate(fileContentBase):
-    characters = ['','!',',','?','\n','.']
+    characters = ['','!',',','?','\n','.','...']
     for i in range(0, len(fileContent)):
         nameFile = fileContentBase[i].replace('\n', '')
         base = open(nameFile, "r")                                                      #Abre arquivo
