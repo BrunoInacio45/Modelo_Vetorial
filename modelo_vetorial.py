@@ -133,7 +133,7 @@ def queryManipulate(query, listTerms):
             listSimilarity.append(calculatedSimilarity(vetDocument,vetQuery))           #Chama a função de calcula a similaridade passando os dois vetores
 
         maxSimilarity = max(listSimilarity)                                             #Pega o maior valor entre as subconsultas
-        if maxSimilarity >= 0.001:                                                      #Verifica se o valor é maior que 0.001
+        if maxSimilarity >= 0.001:                                                      #Verifica se o valor é maior ou igual que 0.001
             numDocuments += 1
             dictSimilarity[i] = maxSimilarity                                           #Cria um dicionario, onde a chave é o doc e o valor é a similaridade
     makeResposta(dictSimilarity, numDocuments)                                          #Chama função para gravar no arquivo
